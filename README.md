@@ -43,4 +43,5 @@ To determine a specific instruction , knowledge of a decode table is required. T
 ![My Image](RV321_base_instruction_set.jpg)
 
 ## The design
-This design is focused on the CPU core only, ignoring all of the logic that would be necessary to interface with the surrounding system, such as input/output (I/O) controllers, interrupt logic, system timers. Sources of complexity, like caches used to hold recently-accessed memory data close to the CPU core are also ignored here. The aim is to implement separate, and very small, instruction and data memories. IMem and DMem are typical seperate, single cycle instruction and data caches.
+This design is focused on the CPU core only, ignoring all of the logic that would be necessary to interface with the surrounding system, such as input/output (I/O) controllers, interrupt logic, system timers. Sources of complexity, like caches used to hold recently-accessed memory data close to the CPU core are also ignored here. The aim is to implement separate, and very small, instruction and data memories. IMem and DMem are typical seperate, single cycle instruction and data caches. It will execute a test programm of summing up numbers 1 through 10. The CPU components are shown below.
+![My Image](CPU_block_diagramm.jpg)
