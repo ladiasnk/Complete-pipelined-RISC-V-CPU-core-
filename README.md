@@ -39,3 +39,4 @@ To determine the type of instruction , you can examine its opcode, first two bit
 The immediate value is a bit more complicated. It is composed of bits from different fields depending on the type.
 ![My Image](Immediate.jpg)
 
+To determine a specific instruction , knowledge of a decode table is required. This is given from the RV321 base instruction set
