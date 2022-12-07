@@ -1,6 +1,12 @@
 # Complete-pipelined-RISC-V-CPU-core-
 ### This is a project I was able to develop while taking a course from Linux Foundation on Building a RISC-V CPU Core (LFD111x). It implements a complete RISC-V CPU core. I am using Transaction-Level Verilog (TLV) language extension, to perform instruction-level parallelism, by dividing incoming instructions into a series of sequential steps (the eponymous "pipeline"). This arrangement lets the CPU complete an instruction on each clock cycle. Using the Makerchip online integrated development environment (IDE), an open source tool that can easily be accessed by anyone. It is also an evolving platform.
 
+## About Makerchip IDE
+Although you can edit your code live on web browser in the Makerhcip IDE, you can also launch Makerchip from your desktop to work with a local TL-Verilog source file. Makerchip will run in your browser, but autosaves back to your desktop. You can install the Makerchip app first:
+```
+pip3 install makerchip-app
+```
+
  Makerchip provides random stimulus for dangling inputs, making it a really convenient tool to use, as there is no need to write a test bench to provide stimulus (input) to your design. When opening any available example of the platform, one can play and get familiar real quick with it. It consists of an editor pane, where you can edit your own circuit, everything is written in (\TLV code blocks in this design) a NAV-TLV pane where TLV macros are expanded and a log outputs tab, where one can track for errors or warnings. Compilation and simulation happen at the same time, resulting in a logic diagramm of the circuit designed, while also providing with the output waveforms tab. VIZ tab could be used to further simplify debug for large designs.
 
 Typically, you would create your own custom visualizations as you develop your circuit, so you can see the big picture simulation behavior more easily. However, thanks to the course benefits, this was provided for me. You can see the visualization code in the NAV-TLV pane, where macros are expanded.
