@@ -6,6 +6,10 @@ Although you can edit your code live on web browser in the Makerhcip IDE, you ca
 ```
 pip3 install makerchip-app
 ```
+Then launch the makerchip app at a path where you store your local TL-Verilog source file:
+```
+makerchip <path>/<local_TL_file>.tlv
+```
 
  Makerchip provides random stimulus for dangling inputs, making it a really convenient tool to use, as there is no need to write a test bench to provide stimulus (input) to your design. When opening any available example of the platform, one can play and get familiar real quick with it. It consists of an editor pane, where you can edit your own circuit, everything is written in (\TLV code blocks in this design) a NAV-TLV pane where TLV macros are expanded and a log outputs tab, where one can track for errors or warnings. Compilation and simulation happen at the same time, resulting in a logic diagramm of the circuit designed, while also providing with the output waveforms tab. VIZ tab could be used to further simplify debug for large designs.
 
