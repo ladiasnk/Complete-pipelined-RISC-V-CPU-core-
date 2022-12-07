@@ -35,3 +35,7 @@ Below a RISC-V base instruction format is presented, from ![RISC-V specification
 
 To determine the type of instruction , you can examine its opcode, first two bits must be 2'b11 for valid RV321 instructions, every instruction is assumed to be valid. The ISA defines the instruction type to be determined as follows. Gray cells can be ignored as these are not used in RV321
 ![My Image](instruction_type.jpg)
+
+The immediate value is a bit more complicated. It is composed of bits from different fields depending on the type.
+![My Image](Immediate.jpg)
+
