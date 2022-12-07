@@ -59,3 +59,5 @@ Now that we have the register values, it’s time to operate on them. This is th
 Now the result value from the ALU can be written back to the destination register specified in the instruction.
 ### 7. DMem
 Our test program executes entirely out of the register file and does not require a data memory (DMem). But no CPU is complete without one. The DMem is written to by store instructions and read from by load instructions.
+
+## Implementation 
