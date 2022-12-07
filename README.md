@@ -33,3 +33,4 @@ RISC-V instructions may provide the following fields:
 Below a RISC-V base instruction format is presented, from ![RISC-V specifications](https://riscv.org/technical/specifications/ "RISC-V base insturction format showing immediate variants")
 ![My Image](RISC-V_ISA.jpg)
 To determine the type of instruction , you can examine its opcode, first two bits must be 2'b11 for valid RV321 instructions, every instruction is assumed to be valid. The ISA defines the instruction type to be determined as follows.
+![My Image](instruction_type.jpg)
