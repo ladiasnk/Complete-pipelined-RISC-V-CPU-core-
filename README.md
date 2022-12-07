@@ -21,3 +21,4 @@ RISC-V instructions may provide the following fields:
  * immediate: A value contained within the instruction bits themselves. This value may provide an offset for indexing into memory or a value upon which to operate (in place of the register value indexed by rs2).
 
 Below a RISC-V base instruction format is presented, from ![RISC-V specifications](https://riscv.org/technical/specifications/ "RISC-V base insturction format showing immediate variants")
+![My Image](RISC-V_ISA.jpg)
