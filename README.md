@@ -43,7 +43,7 @@ To determine a specific instruction , knowledge of a decode table is required. T
 ![My Image](RV321_base_instruction_set.jpg)
 
 ## The design
-This design is focused on the CPU core only, ignoring all of the logic that would be necessary to interface with the surrounding system, such as input/output (I/O) controllers, interrupt logic, system timers. Sources of complexity, like caches used to hold recently-accessed memory data close to the CPU core are also ignored here. The aim is to implement separate, and very small, instruction and data memories. IMem and DMem are typical seperate, single cycle instruction and data caches. It will execute a test programm of summing up numbers 1 through 10. The CPU components are shown below.
+This design is focused on the CPU core only, ignoring all of the logic that would be necessary to interface with the surrounding system, such as input/output (I/O) controllers, interrupt logic, system timers. Sources of complexity, like caches used to hold recently-accessed memory data close to the CPU core are also ignored here. The aim is to implement separate, and very small, instruction and data memories. IMem and DMem are typical seperate, single cycle instruction and data caches. As a result, this CPU is closer to a microcontroller's CPU rather than a desktop's one. It will execute a test programm of summing up numbers 1 through 10. The CPU components are shown below.
 ![My Image](CPU_block_diagram.jpg)
 ### 1. PC logic
 This logic is responsible for the program counter (PC). The PC identifies the instruction our CPU will execute next. Most instructions execute sequentially, meaning the default behavior of the PC is to increment to the following instruction each clock cycle. Branch and jump instructions, however, are non-sequential. They specify a target instruction to execute next, and the PC logic must update the PC accordingly.
@@ -61,3 +61,6 @@ Now the result value from the ALU can be written back to the destination registe
 Our test program executes entirely out of the register file and does not require a data memory (DMem). But no CPU is complete without one. The DMem is written to by store instructions and read from by load instructions.
 
 ## Implementation 
+In order to decide the type of the instruction , assignments , according to table for instruction types in section "About RISC-V architecture", are made for each type of instruction. Next, rs1,rs2,rd and funct3 fields are examined for their validity after extracting from instruction bits. Then, immediate field is assigned according to its structure presented in previous section. 
+
+Α series of bits called dec_bits is defined using instruction's 30th bit , funct3 and opcode fields. Based on this, specific operations are decided. ALU is then implemented using these operations to decide the corresponding 32-bit result. What's important here , is the branch logic, which is implemented bsaed on a taken_br single bit variable. This variable is 1 , whenever a branch operation occrus and 0 by default. Branch logic is presented below.
