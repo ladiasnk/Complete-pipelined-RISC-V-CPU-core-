@@ -61,6 +61,7 @@ Now the result value from the ALU can be written back to the destination registe
 Our test program executes entirely out of the register file and does not require a data memory (DMem). But no CPU is complete without one. The DMem is written to by store instructions and read from by load instructions.
 
 ## Implementation 
-In order to decide the type of the instruction , assignments , according to table for instruction types in section "About RISC-V architecture", are made for each type of instruction. Next, rs1,rs2,rd and funct3 fields are examined for their validity after extracting from instruction bits. Then, immediate field is assigned according to its structure presented in previous section. 
-
-Α series of bits called dec_bits is defined using instruction's 30th bit , funct3 and opcode fields. Based on this, specific operations are decided. ALU is then implemented using these operations to decide the corresponding 32-bit result. What's important here , is the branch logic, which is implemented bsaed on a taken_br single bit variable. This variable is 1 , whenever a branch operation occrus and 0 by default. Branch logic is presented below.
+In order to decide the type of the instruction , assignments , according to table for instruction types in section "About RISC-V architecture", are made for each type of instruction. Next, rs1,rs2,rd and funct3 fields are examined for their validity after extracting from instruction bits. Then, immediate field is assigned according to its structure presented in previous section. The register file is generated through a TL-verilog array definition expanded from M4 macro preprocessor library. 
+![My Image](initial_register_file.jpg)
+Α series of bits called dec_bits is defined using instruction's 30th bit , funct3 and opcode fields. Based on this, specific operations are decided. ALU is then implemented using these operations to decide the corresponding 32-bit result. What's important here , is the branch logic, which is implemented bsaed on a taken_br single bit variable. This variable is 1 , whenever a branch operation occrus and 0 by default.
+![My Image](branch_taken_logic_diagramm.jpg)
