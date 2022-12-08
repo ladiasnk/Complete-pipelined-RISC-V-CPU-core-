@@ -66,4 +66,6 @@ In order to decide the type of the instruction , assignments , according to tabl
 ![My Image](initial_register_file.jpg)
 
 Α series of bits called dec_bits is defined using instruction's 30th bit , funct3 and opcode fields. Based on this, specific operations are decided. ALU is then implemented using these operations to decide the corresponding 32-bit result. What's important here , is the branch logic, which is implemented bsaed on a taken_br single bit variable. This variable is 1 , whenever a branch operation occrus and 0 by default. Caution needs to be takne on next pc logic, whenever a branch or jump conditions is met, next_pc is assigned to a branch target variable based on branch or jump instruction.
+
 ![My Image](branch_taken_logic_diagramm.jpg)
+
