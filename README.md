@@ -61,7 +61,7 @@ Now the result value from the ALU can be written back to the destination registe
 Our test program executes entirely out of the register file and does not require a data memory (DMem). But no CPU is complete without one. The DMem is written to by store instructions and read from by load instructions.
 
 ## Implementation 
-In order to decide the type of the instruction , assignments , according to table for instruction types in section "About RISC-V architecture", are made for each type of instruction. Next, rs1,rs2,rd and funct3 fields are examined for their validity after extracting from instruction bits. Then, immediate field is assigned according to its structure presented in previous section. The register file is generated through a TL-verilog array definition expanded from M4 macro preprocessor library. IMEM read-only memory is also implemented this way, this memory is constantly on read-mode. 
+In order to decide the type of the instruction , assignments , according to table for instruction types in section "About RISC-V architecture", are made for each type of instruction. Next, rs1,rs2,rd and funct3 fields are examined for their validity after extracting from instruction bits. Then, immediate field is assigned according to its structure presented in previous section. The register file is generated through a TL-verilog array definition expanded from M4 macro preprocessor library. IMEM read-only memory is also implemented this way, this memory is constantly on read-mode. It deos not have a read enable input, but its potential power savings are not of concern in this design. This array memory, provides its output data in the same clock cycle as the input address. as a macro, this would result in an implementation using flip-flops  that would be far less optimal than SRAM.
 
 ![My Image](initial_register_file.jpg)
 
@@ -69,3 +69,4 @@ In order to decide the type of the instruction , assignments , according to tabl
 
 ![My Image](branch_taken_logic_diagramm.jpg)
 
+All load/store instructions operate on words, assuming the lowest two address bits are zero, to avoid complexity of single byte read/write or half-words (2 bytes) read/write.
