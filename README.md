@@ -61,7 +61,7 @@ Now the result value from the ALU can be written back to the destination registe
 Our test program executes entirely out of the register file and does not require a data memory (DMem). But no CPU is complete without one. The DMem is written to by store instructions and read from by load instructions.
 
 ## Implementation 
-In order to decide the type of the instruction , assignments , according to table for instruction types in section "About RISC-V architecture", are made for each type of instruction. Next, rs1,rs2,rd and funct3 fields are examined for their validity after extracting from instruction bits. Then, immediate field is assigned according to its structure presented in previous section. The register file is generated through a TL-verilog array definition expanded from M4 macro preprocessor library. IMEM read-only memory is also implemented this way, this memory is constantly on read-mod. 
+In order to decide the type of the instruction , assignments , according to table for instruction types in section "About RISC-V architecture", are made for each type of instruction. Next, rs1,rs2,rd and funct3 fields are examined for their validity after extracting from instruction bits. Then, immediate field is assigned according to its structure presented in previous section. The register file is generated through a TL-verilog array definition expanded from M4 macro preprocessor library. IMEM read-only memory is also implemented this way, this memory is constantly on read-mode. 
 
 ![My Image](initial_register_file.jpg)
 
