@@ -65,8 +65,14 @@ In order to decide the type of the instruction , assignments , according to tabl
 
 ![My Image](initial_register_file.jpg)
 
-Α series of bits called dec_bits is defined using instruction's 30th bit , funct3 and opcode fields. Based on this, specific operations are decided. ALU is then implemented using these operations to decide the corresponding 32-bit result. What's important here , is the branch logic, which is implemented bsaed on a taken_br single bit variable. This variable is 1 , whenever a branch operation occrus and 0 by default. Caution needs to be takne on next pc logic, whenever a branch or jump conditions is met, next_pc is assigned to a branch target variable based on branch or jump instruction.
+Α series of bits called dec_bits is defined using instruction's 30th bit , funct3 and opcode fields. Based on this, specific operations are decided. ALU is then implemented using these operations to decide the corresponding 32-bit result. What's important here , is the branch logic, which is implemented bsaed on a taken_br single bit variable. This variable is 1 , whenever a branch operation occurs and 0 by default. Caution needs to be taken on next pc logic, whenever a branch or jump conditions is met, next_pc is assigned to a branch target variable based on branch or jump instruction. All load/store instructions operate on words, assuming the lowest two address bits are zero, to avoid complexity of single byte read/write or half-words (2 bytes) read/write. 
 
 ![My Image](branch_taken_logic_diagramm.jpg)
 
-All load/store instructions operate on words, assuming the lowest two address bits are zero, to avoid complexity of single byte read/write or half-words (2 bytes) read/write.
+## Simulation
+
+The test programm executes assembly instructions in the \SV code block, using several registers to sum numbers 1 through 9. It also stores a value on a specified register. The user can play with these and experiment, by adding instructions with the same format and watching it execute step by step on the VIZ pane. On the VIZ pane, you can also have a live view of the register file internal registers as well as DMEM's. The output diagramm generated for the complete RISV-V CPU is shown below.
+
+The output diagram shown for the complete RISC-V is the following 
+
+ALl the connections of every signal and their connections between them are shown, where one can select a signal or register and view its related ones as well as the direction of connectivity. 
