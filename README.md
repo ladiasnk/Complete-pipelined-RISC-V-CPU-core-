@@ -75,4 +75,6 @@ The test programm executes assembly instructions in the \SV code block, using se
 
 The output diagram shown for the complete RISC-V is the following 
 
-ALl the connections of every signal and their connections between them are shown, where one can select a signal or register and view its related ones as well as the direction of connectivity. 
+![My Image](diagramm.jpg)
+
+ALl the connections of every signal and their connections between them are shown, where one can select a signal or register and view its related ones as well as the direction of connectivity. Output waveform can also be viewn in the 'WAVEFORM' tab. There you can view all the output waveforms of every signal, dmem and register file registers.  
