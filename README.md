@@ -71,7 +71,7 @@ In order to decide the type of the instruction , assignments , according to tabl
 
 ## Simulation
 
-The test programm executes assembly instructions in the \SV code block, using several registers to sum numbers 1 through 9. It also stores a value on a specified register. The user can play with these and experiment, by adding instructions with the same format and watching it execute step by step on the VIZ pane. On the VIZ pane, you can also have a live view of the register file internal registers as well as DMEM's. The output diagramm generated for the complete RISV-V CPU is shown below.
+The test programm executes assembly instructions in the \SV code block, using several registers to sum numbers 1 through 9, after storing a value first in a random register. It also stores a value on a specified register. The user can play with these and experiment, by adding instructions with the same format and watching it execute step by step on the VIZ pane. On the VIZ pane, you can also have a live view of the register file internal registers as well as DMEM's. The output diagramm generated for the complete RISV-V CPU is shown below.
 
 The output diagram shown for the complete RISC-V is the following 
 
